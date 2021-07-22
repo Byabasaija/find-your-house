@@ -1,16 +1,44 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { fetchHouses } from '../actions/index';
 import House from '../components/House';
 
 const Houses = (props) => {
-  const { houses } = props;
-  return (
-    <div>
+  const { houses, fetchHouses } = props;
+
+  useEffect(() => {
+    fetchHouses();
+  }, []);
+
+  const renderHouses = () => {
+    if (houses.loading) {
+      return (
+        <h2>
+          Loading ...
+        </h2>
+      );
+    } if (houses.error) {
+      return (
+        <h2>
+          {' '}
+          {houses.error}
+          {' '}
+        </h2>
+      );
+    }
+    return (
       <div>
-        { houses.map((ahouse) => (<House house={ahouse} key={ahouse.id} />))}
+        <div>
+          { houses && houses.houses && houses.houses.map((ahouse) => (
+            <House house={ahouse} key={ahouse.id} />))}
+        </div>
       </div>
-    </div>
+    );
+  };
+
+  return (
+    <div>{ renderHouses() }</div>
   );
 };
 
@@ -18,4 +46,8 @@ const mapStateToProps = (state) => ({
   houses: state.houses,
 });
 
-export default connect(mapStateToProps)(Houses);
+const mapDispatchToProps = (dispatch) => ({
+  fetchHouses: () => dispatch(fetchHouses()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Houses);

@@ -1,10 +1,14 @@
-import Houses from './containers/Houses';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes/Routes';
 
 function App() {
   return (
-    <div>
-      <Houses />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes />
+        {/* <Houses /> */}
+      </div>
+    </BrowserRouter>
   );
 }
 

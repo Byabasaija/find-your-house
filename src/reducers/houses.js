@@ -5,9 +5,10 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  loading: false,
-  items: [],
+  loding: false,
+  houses: [],
   error: '',
+
 };
 
 const housesReducer = (state = initialState, action) => {
@@ -16,19 +17,18 @@ const housesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: null,
       };
     case FETCH_HOUSES_SUCCESS:
       return {
         ...state,
-        loading: false,
-        items: action.payload,
+        houses: action.payload,
         error: '',
       };
+
     case FETCH_HOUSES_FAILURE:
       return {
         ...state,
-        items: [],
+        houses: [],
         error: action.payload,
       };
     default:
