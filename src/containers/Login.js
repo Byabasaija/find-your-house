@@ -2,7 +2,9 @@
 /* eslint-disable react/destructuring-assignment */
 import { connect } from 'react-redux';
 import React from 'react';
+import { withRouter } from 'react-router';
 import { login } from '../actions/index';
+import './Login.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -30,6 +32,10 @@ class Login extends React.Component {
     return (
       <div className="login-div">
         <div>
+          <h2 className="login-text">Login</h2>
+          <p className="login-text">Hey there! Welcome to back</p>
+        </div>
+        <div>
           <form onSubmit={this.handleSubmit}>
             <input
               placeholder="Name..."
@@ -51,4 +57,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   null,
   mapDispatchToProps,
-)(Login);
+)(withRouter(Login));

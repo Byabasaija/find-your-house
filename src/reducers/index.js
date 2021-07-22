@@ -3,8 +3,9 @@ import housesReducer from './houses';
 import loginReducer from './users';
 
 const rootReducer = combineReducers({
-  houses: housesReducer,
   login: loginReducer,
+  houses: housesReducer,
+
 });
 
 export default rootReducer;

@@ -1,15 +1,25 @@
-import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes/Routes';
+/* eslint-disable react/prop-types */
+import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
+import React from 'react';
+import Home from './containers/Home';
+import Login from './containers/Login';
+
+function App({ isLogged }) {
   return (
-    <BrowserRouter>
-      <div>
-        <Routes />
-        {/* <Houses /> */}
-      </div>
-    </BrowserRouter>
+    <Switch>
+      { isLogged ? (
+        <Route path="/" render={() => <Home />} />
+      ) : (
+        <Route exact path="/" render={() => <Login />} />
+      )}
+
+    </Switch>
   );
 }
 
-export default App;
+const mapStateToProps = ({ login: { isLogged } }) => ({
+  isLogged,
+});
+export default connect(mapStateToProps)(App);
