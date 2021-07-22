@@ -5,8 +5,9 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  loding: false,
+
   house: {},
+  loding: false,
   error: '',
 
 };
