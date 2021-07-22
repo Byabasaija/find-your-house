@@ -12,7 +12,7 @@ const Houses = (props) => {
   }, []);
 
   const renderHouses = () => {
-    if (houses.loading) {
+    if (houses.loading === true) {
       return (
         <h2>
           Loading ...
