@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { connect } from 'react-redux';
 import React, { useState } from 'react';
-// import { withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 import loginUserAction from '../actions/loginUser';
 import './Login.css';
 
@@ -57,4 +57,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   null,
   mapDispatchToProps,
-)(Login);
+)(withRouter(Login));

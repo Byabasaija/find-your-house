@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -7,10 +8,10 @@ import Home from './containers/Home';
 // import Signup from './auth/Signup';
 import Login from './auth/Login';
 
-function App({ isLogged }) {
+function App({ logged_in }) {
   return (
     <Switch>
-      { isLogged ? (
+      { logged_in ? (
         <Route path="/" render={() => <Home />} />
       ) : (
         <Route exact path="/" render={() => <Login />} />
@@ -20,7 +21,7 @@ function App({ isLogged }) {
   );
 }
 
-const mapStateToProps = ({ login: { isLogged } }) => ({
-  isLogged,
+const mapStateToProps = (state) => ({
+  logged_in: state.login.user.logged_in,
 });
 export default connect(mapStateToProps)(App);
