@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import React from 'react';
 import Home from './containers/Home';
-import Login from './containers/Login';
+// import Signup from './auth/Signup';
+import Login from './auth/Login';
 
 function App({ isLogged }) {
   return (

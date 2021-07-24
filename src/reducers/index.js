@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import housesReducer from './houses';
-import loginReducer from './users';
+import loginReducer from './loginUser';
 import houseReducer from './house';
 
 const rootReducer = combineReducers({

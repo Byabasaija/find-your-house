@@ -7,7 +7,6 @@ import {
   FETCH_HOUSE_REQUEST,
   FETCH_HOUSE_SUCCESS,
   FETCH_HOUSE_FAILURE,
-  LOGIN,
 } from './actionTypes';
 
 const fetchHousesRequest = () => ({
@@ -68,11 +67,6 @@ const fetchHouse = (id) => async (dispatch) => {
   }
 };
 
-const login = (isLogged) => ({
-  type: LOGIN,
-  payload: isLogged,
-});
-
 export {
-  fetchHousesRequest, fetchHousesSuccess, fetchHousesFailure, fetchHouses, fetchHouse, login,
+  fetchHousesRequest, fetchHousesSuccess, fetchHousesFailure, fetchHouses, fetchHouse,
 };

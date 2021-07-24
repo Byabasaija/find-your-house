@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { withRouter } from 'react-router';
-// import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { login } from '../actions/index';
+// import { withRouter } from 'react-router';
+// // import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import { login } from '../actions/index';
 
-const Header = ({ login, history }) => (
+const Header = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-dark">
     <div className="container">
       <span className="navbar-brand text-white pg-title" href="#">Houses</span>
@@ -19,7 +19,7 @@ const Header = ({ login, history }) => (
             <Link to="/" className="nav-link text-white">Home</Link>
           </li>
         </ul>
-        <div>
+        {/* <div>
           <button
             type="button"
             className="nav-div-div-button"
@@ -30,17 +30,14 @@ const Header = ({ login, history }) => (
           >
             Log out
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   </nav>
 );
 
-const mapDispatchToprops = (dispatch) => ({
-  login: (isLogged) => dispatch(login(isLogged)),
-});
+// const mapDispatchToprops = (dispatch) => ({
+//   login: (isLogged) => dispatch(login(isLogged)),
+// });
 
-export default connect(
-  null,
-  mapDispatchToprops,
-)(withRouter(Header));
+export default Header;

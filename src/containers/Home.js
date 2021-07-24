@@ -10,6 +10,7 @@ const Home = () => (
     <Switch>
       <Route exact path="/" component={Houses} />
       <Route exact path="/house/:id" component={HouseDetails} />
+
     </Switch>
   </div>
 );
