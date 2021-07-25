@@ -21,15 +21,17 @@ const Header = ({ history }) => {
           <i className="fas fa-bars text-dark" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">Home</Link>
-            </li>
-          </ul>
+          <div>
+            <Link to="/my-favorites" className="btn btn-primary pl-3">
+              <button type="button" className="text-white">
+                My Favorites
+              </button>
+            </Link>
+          </div>
           <div>
             <button
               type="button"
-              className="nav-div-div-button"
+              className="btn btn-primary"
               onClick={() => handleLogout()}
             >
               Log out

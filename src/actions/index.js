@@ -53,7 +53,7 @@ const fetchHouseFailure = (error) => ({
 });
 
 const fetchHouse = (id) => async (dispatch) => {
-  dispatch(fetchHouseRequest);
+  dispatch(fetchHouseRequest());
 
   try {
     const response = await axios.get(

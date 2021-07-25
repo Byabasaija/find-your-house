@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import HouseDetails from './HouseDetails';
 import Houses from './Houses';
+import UserFavorites from './UserFavorites';
 
 const Home = () => (
   <div>
@@ -10,6 +11,7 @@ const Home = () => (
     <Switch>
       <Route exact path="/" component={Houses} />
       <Route exact path="/house/:id" component={HouseDetails} />
+      <Route exact path="/my-favorites" component={UserFavorites} />
 
     </Switch>
   </div>

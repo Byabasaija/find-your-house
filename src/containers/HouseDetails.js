@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { fetchHouse } from '../actions/index';
+import { AddFavoriteAction } from '../actions/Favorites';
 
 const HouseDetails = () => {
   const house = useSelector((state) => state.house.house);
@@ -17,6 +18,14 @@ const HouseDetails = () => {
       dispatch(fetchHouse(id));
     }
   }, []);
+
+  const user_id = useSelector((state) => state.login.user.user.id);
+  const house_id = useSelector((state) => state.house.house.id);
+
+  const addFAvorites = (e) => {
+    e.preventDefault();
+    dispatch(AddFavoriteAction(user_id, house_id));
+  };
 
   return (
     <div className="ui grid container">
@@ -38,7 +47,7 @@ const HouseDetails = () => {
                   <div className="hidden content">
                     <i className="shop icon" />
                   </div>
-                  <div className="btn btn-primary">Add to favorites</div>
+                  <button type="submit" onClick={(e) => addFAvorites(e)} className="btn btn-primary">Add to favorites</button>
                 </div>
               </div>
             </div>
