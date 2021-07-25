@@ -25,3 +25,10 @@ code {
   margin-right: 10px;
 }
 
+.btn-orange {
+  background-color: rgb(248, 113, 2);
+  text-align: center;
+ padding: 10px;
+ color: #fff;
+}
+

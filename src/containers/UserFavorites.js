@@ -9,7 +9,6 @@ import House from '../components/House';
 
 const UserFavorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites.favorites);
-  //   const { name, image_url, description } = house;
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +16,7 @@ const UserFavorites = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div>
         {favorites.map((ahouse) => (
           <House house={ahouse} key={ahouse.id} />))}

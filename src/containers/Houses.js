@@ -28,7 +28,7 @@ const Houses = (props) => {
       );
     }
     return (
-      <div>
+      <div className="container">
         <div>
           { houses && houses.houses && houses.houses.map((ahouse) => (
             <House house={ahouse} key={ahouse.id} />))}

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { fetchHouse } from '../actions/index';
 import { AddFavoriteAction } from '../actions/Favorites';
+import '../index.css';
 
 const HouseDetails = () => {
   const house = useSelector((state) => state.house.house);
@@ -34,20 +35,23 @@ const HouseDetails = () => {
       ) : (
         <div className="container">
           <div className="row">
-            <div className="col">House Details</div>
+            <h1 className="mb-3 text-center">{ name }</h1>
             <div className="">
               <div className="">
                 <img className="img-fluid" src={image_url} alt={name} />
               </div>
               <div className="">
-                <h1>{name}</h1>
+                <h4 className="pb-3 pt-3">About this House</h4>
 
                 <p>{description}</p>
                 <div className="ui vertical animated button">
                   <div className="hidden content">
                     <i className="shop icon" />
                   </div>
-                  <button type="submit" onClick={(e) => addFAvorites(e)} className="btn btn-primary">Add to favorites</button>
+                  <div className="text-center">
+                    <i className="fas fa-angle-down" />
+                  </div>
+                  <div role="button" tabIndex={0} onClick={(e) => addFAvorites(e)} onKeyUp={(e) => addFAvorites(e)} className="btn-orange">Add to favorites</div>
                 </div>
               </div>
             </div>

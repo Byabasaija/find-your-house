@@ -20,18 +20,23 @@ const Header = ({ history }) => {
         <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i className="fas fa-bars text-dark" />
         </button>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div>
-            <Link to="/my-favorites" className="btn btn-primary pl-3">
-              <button type="button" className="text-white">
-                My Favorites
-              </button>
-            </Link>
-          </div>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+
+              <Link to="/my-favorites" className="nav-link active">
+                { ' My Favorites >'}
+
+              </Link>
+            </li>
+          </ul>
+
+          <div className="pb-2" />
           <div>
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-orange"
               onClick={() => handleLogout()}
             >
               Log out
@@ -42,9 +47,5 @@ const Header = ({ history }) => {
     </nav>
   );
 };
-
-// const mapDispatchToprops = (dispatch) => ({
-//   login: (isLogged) => dispatch(login(isLogged)),
-// });
 
 export default (withRouter(Header));

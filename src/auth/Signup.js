@@ -7,6 +7,7 @@ import PropTypes from 'proptypes';
 import { Switch, Route, Link } from 'react-router-dom';
 import registerUserAction from '../actions/registerUser';
 import Login from './Login';
+import './Login.css';
 
 const Signup = ({ signUpUser }) => {
   const [username, setUsername] = useState('');
@@ -33,47 +34,62 @@ const Signup = ({ signUpUser }) => {
 
   return (
 
-    <div>
+    <div className="limiter">
 
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={username}
-          onChange={(e) => handleChangeUsername(e)}
-          required
-        />
+      <div className="container-login100 login-pg">
+        <div className="wrap-login100 p-t-190 p-b-30">
+          <form onSubmit={(e) => handleSubmit(e)} className="login100-form validate-form">
+            <div className="form-group pb-3 wrap-input100 validate-input m-b-10">
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                value={username}
+                onChange={(e) => handleChangeUsername(e)}
+                required
+                className="form-control p-2 input100"
+              />
+            </div>
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => handleChangePassword(e)}
-          required
-        />
+            <div className="form-group pb-3 wrap-input100 validate-input m-b-10">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => handleChangePassword(e)}
+                required
+                className="form-control p-2 input100"
+              />
+            </div>
 
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password confirmation"
-          value={password_confirmation}
-          onChange={(e) => handleChangePasswordCof(e)}
-          required
-        />
+            <div className="form-group pb-3 wrap-input100 validate-input m-b-10">
+              <input
+                type="password"
+                name="password_confirmation"
+                placeholder="Password confirmation"
+                value={password_confirmation}
+                onChange={(e) => handleChangePasswordCof(e)}
+                required
+                className="form-control p-2 input100"
+              />
+            </div>
 
-        <button type="submit">Register</button>
-      </form>
-      <div>
-        <p>Already have an account? </p>
-        <Switch>
-          <Route exact path="/login" component={Login} />
-        </Switch>
-        <Link to="/login">
-          {' '}
-          <p>LOGIN</p>
-        </Link>
+            <div className="container-login100-form-btn p-t-10">
+              <button type="submit" className="login100-form-btn">Register</button>
+            </div>
+          </form>
+          <div>
+            <p className="text-center w-full">Already have an account? </p>
+            <Switch>
+              <Route exact path="/login" component={Login} />
+            </Switch>
+            <Link to="/login" className="text-center w-full">
+              {' '}
+              <p>Login</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

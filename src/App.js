@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import React from 'react';
 import Home from './containers/Home';
 // import Signup from './auth/Signup';
-import Login from './auth/Login';
+// import Login from './auth/Login';
+import Signup from './auth/Signup';
 
 function App({ logged_in }) {
   return (
@@ -14,7 +15,7 @@ function App({ logged_in }) {
       { logged_in ? (
         <Route path="/" render={() => <Home />} />
       ) : (
-        <Route exact path="/" render={() => <Login />} />
+        <Route exact path="/" render={() => <Signup />} />
       )}
 
     </Switch>
