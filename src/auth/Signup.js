@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import { Switch, Route, Link } from 'react-router-dom';
 import registerUserAction from '../actions/registerUser';
 import Login from './Login';
@@ -94,10 +92,6 @@ const Signup = ({ signUpUser }) => {
     </div>
   );
 };
-
-// const mapStateToProps = (state) => ({
-//   response: state.userReducer.response,
-// });
 
 const mapDispatchToProps = (dispatch) => ({
   signUpUser: (user) => {

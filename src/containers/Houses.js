@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchHouses } from '../actions/index';
@@ -40,6 +40,11 @@ const Houses = (props) => {
   return (
     <div>{ renderHouses() }</div>
   );
+};
+
+Houses.propTypes = {
+  houses: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  fetchHouses: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

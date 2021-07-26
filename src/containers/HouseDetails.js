@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 
-/* eslint-disable react/prop-types */
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';

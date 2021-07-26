@@ -24,7 +24,7 @@ const AddFavoriteAction = (user_id, house_id) => async () => {
         user_id,
         house_id,
       },
-      { AccessControlAllowCredentials: true },
+      { withCredentials: true },
     )
     .then((response) => {
       const favorites = response.data;
@@ -53,11 +53,11 @@ const fetchFavoriteFailure = (error) => ({
   payload: error,
 });
 
-const fetchFavoriteAction = () => async (dispatch) => {
+const fetchFavoriteAction = (id) => async (dispatch) => {
   dispatch(fetchFavoriteRequest());
   axios
     .get(
-      'http://localhost:3001/user_favorites',
+      `http://localhost:3001/sessions/${id}`,
       { withCredentials: true },
     )
     .then((response) => {
