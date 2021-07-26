@@ -14,10 +14,10 @@ const logoutUserFailure = (error) => ({
   payload: error,
 });
 
-const logoutUserAction = () => async (dispatch) => {
+const logoutUserAction = (id) => async (dispatch) => {
   axios
     .delete(
-      'http://localhost:3001/logout',
+      `http://localhost:3001/sessions/${id}`,
       { withCredentials: true },
     )
     .then((response) => {

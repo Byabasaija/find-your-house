@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { withRouter } from 'react-router';
 // // import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { login } from '../actions/index';
 import logoutUserAction from '../actions/logoutUser';
 
 const Header = ({ history }) => {
   const dispatch = useDispatch();
+  const id = useSelector((state) => state.login.user.user.id);
   const handleLogout = () => {
-    dispatch(logoutUserAction());
+    dispatch(logoutUserAction(id));
     history.push('/');
   };
   return (

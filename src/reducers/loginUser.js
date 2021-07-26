@@ -6,7 +6,8 @@ import {
 } from '../actions/actionTypes';
 
 const init = {
-  user: { logged_in: false },
+  isLogged: false,
+  user: { },
   error: '',
 };
 
@@ -14,7 +15,7 @@ const loginReducer = (state = init, action) => {
   switch (action.type) {
     case LOGIN_USER_SUCCESS:
       return {
-        ...state,
+        isLogged: true,
         user: action.payload,
         error: '',
       };
@@ -26,7 +27,7 @@ const loginReducer = (state = init, action) => {
       };
     case LOGOUT_USER_SUCCESS:
       return {
-        ...state,
+        isLogged: false,
         user: action.payload,
         error: '',
       };
