@@ -5,7 +5,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  loding: false,
+  loading: false,
   houses: [],
   error: '',
 
