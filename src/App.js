@@ -7,7 +7,7 @@ import React from 'react';
 import Home from './containers/Home';
 // import Signup from './auth/Signup';
 // import Login from './auth/Login';
-import Signup from './auth/Signup';
+import Auth from './auth/Auth';
 
 function App({ logged_in }) {
   return (
@@ -15,7 +15,8 @@ function App({ logged_in }) {
       { logged_in ? (
         <Route path="/" render={() => <Home />} />
       ) : (
-        <Route exact path="/" render={() => <Signup />} />
+        <Route exact path="/" render={() => <Auth />} />
+
       )}
 
     </Switch>
