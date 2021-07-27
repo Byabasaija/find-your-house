@@ -28,7 +28,7 @@ const fetchHouses = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      'http://localhost:3001/houses',
+      'https://houses-api1.herokuapp.com/houses',
     );
     const houses = response.data;
     dispatch(fetchHousesSuccess(houses));
@@ -57,7 +57,7 @@ const fetchHouse = (id) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `http://localhost:3001/houses/${id}`,
+      `https://houses-api1.herokuapp.com/houses/${id}`,
     );
     const house = response.data;
     dispatch(fetchHouseSuccess(house));

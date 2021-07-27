@@ -43,7 +43,11 @@ const Houses = (props) => {
 };
 
 Houses.propTypes = {
-  houses: PropTypes.arrayOf(Object).isRequired,
+  houses: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.string,
+    houses: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
   fetchHouses: PropTypes.func.isRequired,
 };
 

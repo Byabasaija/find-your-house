@@ -14,15 +14,15 @@ const registerUserSuccess = (user) => ({
   payload: user,
 });
 
-const registerUserFailure = (status) => ({
+const registerUserFailure = (error) => ({
   type: REGISTER_USER_FAILURE,
-  payload: status,
+  payload: error,
 });
 
 const registerUserAction = (user) => async (dispatch) => {
   axios
     .post(
-      'http://localhost:3001/registrations',
+      'https://houses-api1.herokuapp.com/registrations',
       {
         user,
       },

@@ -27,6 +27,12 @@ const UserFavorites = () => {
           {favorites.error}
         </h2>
       );
+    } if (favorites && favorites.favorites && favorites.favorites.length === 0) {
+      return (
+        <h2>
+          You currently have no Favorite houses
+        </h2>
+      );
     }
     return (
       <div className="container">

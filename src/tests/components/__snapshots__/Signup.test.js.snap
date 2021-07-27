@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="limiter"
+>
+  <div
+    className="container-login100 login-pg"
+  >
+    <div
+      className="wrap-login100 p-t-190 p-b-30"
+    >
+      <form
+        className="login100-form validate-form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group pb-3 wrap-input100 validate-input m-b-10"
+        >
+          <input
+            className="form-control p-2 input100"
+            name="username"
+            onChange={[Function]}
+            placeholder="username"
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group pb-3 wrap-input100 validate-input m-b-10"
+        >
+          <input
+            className="form-control p-2 input100"
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+            required={true}
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group pb-3 wrap-input100 validate-input m-b-10"
+        >
+          <input
+            className="form-control p-2 input100"
+            name="password_confirmation"
+            onChange={[Function]}
+            placeholder="Password confirmation"
+            required={true}
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="container-login100-form-btn p-t-10"
+        >
+          <button
+            className="login100-form-btn"
+            type="submit"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+      <div>
+        <p
+          className="text-center w-full"
+        >
+          Already have an account? 
+        </p>
+        <a
+          className="text-center w-full"
+          href="/"
+          onClick={[Function]}
+        >
+           
+          <p>
+            Login
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

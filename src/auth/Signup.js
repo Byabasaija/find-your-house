@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import registerUserAction from '../actions/registerUser';
-import Login from './Login';
+// import Login from './Login';
 import './Login.css';
 
 const Signup = ({ signUpUser }) => {
@@ -79,10 +79,7 @@ const Signup = ({ signUpUser }) => {
           </form>
           <div>
             <p className="text-center w-full">Already have an account? </p>
-            <Switch>
-              <Route exact path="/login" component={Login} />
-            </Switch>
-            <Link to="/login" className="text-center w-full">
+            <Link to="/" className="text-center w-full">
               {' '}
               <p>Login</p>
             </Link>

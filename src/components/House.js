@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../index.css';
 
 const House = (props) => {
@@ -15,5 +15,15 @@ const House = (props) => {
       </Link>
     </div>
   );
+};
+
+House.propTypes = {
+  house: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    image_url: PropTypes.string,
+
+  }).isRequired,
 };
 export default House;

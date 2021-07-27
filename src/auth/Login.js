@@ -60,7 +60,7 @@ const Login = ({ loginUser }) => {
             </form>
 
             <div className="text-center w-full">
-              <Link className="text-dark" to="/">
+              <Link className="text-dark" to="/signup">
                 Create new account
                 <i className="fa fa-long-arrow-right" />
               </Link>

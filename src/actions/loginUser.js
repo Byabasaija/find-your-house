@@ -17,7 +17,7 @@ const loginUserFailure = (error) => ({
 const loginUserAction = (user) => async (dispatch) => {
   axios
     .post(
-      'http://localhost:3001/sessions',
+      'https://houses-api1.herokuapp.com/sessions',
       {
         user,
       },

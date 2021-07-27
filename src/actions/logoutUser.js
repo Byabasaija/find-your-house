@@ -17,7 +17,7 @@ const logoutUserFailure = (error) => ({
 const logoutUserAction = (id) => async (dispatch) => {
   axios
     .delete(
-      `http://localhost:3001/sessions/${id}`,
+      `https://houses-api1.herokuapp.com/sessions/${id}`,
       { withCredentials: true },
     )
     .then((response) => {

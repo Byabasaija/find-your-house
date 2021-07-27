@@ -4,6 +4,8 @@ import {
   LOGIN_USER_FAILURE,
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAILURE,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
 } from '../../actions/actionTypes';
 
 describe('login/logout reducer', () => {
@@ -65,6 +67,31 @@ describe('login/logout reducer', () => {
       ...initialState,
 
       isLogged: false,
+      user: action.payload,
+      error: '',
+    });
+  });
+
+  test('should return the error', () => {
+    const action = {
+      type: REGISTER_USER_FAILURE,
+      error: 'Error while registering.',
+    };
+    expect(login(initialState, action)).toEqual({
+      ...initialState,
+      error: action.payload,
+    });
+  });
+
+  test('should return the logged status true and status sucess', () => {
+    const action = {
+      type: REGISTER_USER_SUCCESS,
+      user: {},
+    };
+    expect(login(initialState, action)).toEqual({
+      ...initialState,
+
+      isLogged: true,
       user: action.payload,
       error: '',
     });

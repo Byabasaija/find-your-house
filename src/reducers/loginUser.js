@@ -3,6 +3,8 @@ import {
   LOGIN_USER_FAILURE,
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAILURE,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
 } from '../actions/actionTypes';
 
 const init = {
@@ -32,6 +34,18 @@ const loginReducer = (state = init, action) => {
         error: '',
       };
     case LOGOUT_USER_FAILURE:
+      return {
+        ...state,
+        user: {},
+        error: action.payload,
+      };
+    case REGISTER_USER_SUCCESS:
+      return {
+        isLogged: true,
+        user: action.payload,
+        error: '',
+      };
+    case REGISTER_USER_FAILURE:
       return {
         ...state,
         user: {},

@@ -1,16 +1,16 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 
 const Auth = () => (
-  <div>
-    <Login />
+  <BrowserRouter>
     <Switch>
-      <Route exact path="/" render={() => <Signup />} />
+      <Route exact path="/" component={Login} />
+      <Route path="/signup" component={Signup} />
 
     </Switch>
-  </div>
+  </BrowserRouter>
 );
 
 export default Auth;
