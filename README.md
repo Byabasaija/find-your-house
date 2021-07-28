@@ -10,11 +10,15 @@ A  ![](https://img.shields.io/badge/Microverse-blueviolet)  Final Capstone proje
  
 
 
-## Meals filtered by category
-![Screenshot](docs/shot1.png)
-## Specific Meal Details
-![Screenshot](docs/shot2.png)
+## Login page
+![Screenshot](src/assets/login.png)
+## List of houses
+![Screenshot](src/assets/house1.png)
 
+## House details
+![Screenshot](src/assets/house2.png)
+## Favorite houses
+![Screenshot](src/assets/fav.png)
 
 ## Built With
 
@@ -24,7 +28,7 @@ A  ![](https://img.shields.io/badge/Microverse-blueviolet)  Final Capstone proje
 - houses-api
 - Bootstrap
 - CSS
-## [Live Link](https://catalogue-of-recipess.herokuapp.com/)
+## [Live Link](https://find-your-houses.herokuapp.com/)
 
 
 
