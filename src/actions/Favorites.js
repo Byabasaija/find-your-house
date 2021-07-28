@@ -21,7 +21,7 @@ const AddFavoriteFailure = (error) => ({
 const AddFavoriteAction = (user_id, house_id) => async (dispatch) => {
   axios
     .post(
-      'https://houses-api1.herokuapp.com/favorites',
+      'http://localhost:3001/favorites',
       {
         user_id,
         house_id,
@@ -57,7 +57,7 @@ const fetchFavoriteAction = (id) => async (dispatch) => {
   dispatch(fetchFavoriteRequest());
   axios
     .get(
-      `https://houses-api1.herokuapp.com/sessions/${id}`,
+      `http://localhost:3001/sessions/${id}`,
       { withCredentials: true },
     )
     .then((response) => {
