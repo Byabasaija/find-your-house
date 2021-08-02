@@ -17,7 +17,7 @@ const HouseDetails = () => {
     if (house !== house.id) {
       dispatch(fetchHouse(id));
     }
-  }, []);
+  }, [id]);
 
   const user_id = useSelector((state) => state.login.user.user.id);
   const house_id = useSelector((state) => state.house.house.id);

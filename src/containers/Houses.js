@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router';
 import { fetchHouses } from '../api/api';
 import House from '../components/House';
+import UserFavorites from './UserFavorites';
+import HouseDetails from './HouseDetails';
 
 const Houses = (props) => {
+  <Switch>
+    <Route exact path="/house/:id" component={HouseDetails} />
+    <Route exact path="/my-favorites" component={UserFavorites} />
+  </Switch>;
   const { houses, fetchHouses } = props;
 
   useEffect(() => {

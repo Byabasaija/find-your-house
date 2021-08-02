@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { withRouter } from 'react-router';
 // // import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { login } from '../actions/index';
 import { logoutUserAction } from '../api/api';
 
 const Header = ({ history }) => {
   const dispatch = useDispatch();
-  const id = useSelector((state) => state.login.user.user.id);
+  // const id = useSelector((state) => state.login.user.id);
   const handleLogout = () => {
-    dispatch(logoutUserAction(id));
-    history.push('/');
+    dispatch(logoutUserAction());
+    history.push('/login');
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">

@@ -1,20 +1,27 @@
+/* eslint-disable camelcase */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
-import HouseDetails from './HouseDetails';
+
 import Houses from './Houses';
-import UserFavorites from './UserFavorites';
 
-const Home = () => (
-  <div>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={Houses} />
-      <Route exact path="/house/:id" component={HouseDetails} />
-      <Route exact path="/my-favorites" component={UserFavorites} />
+const Home = ({ isLogged }) => {
+  if (isLogged === false) {
+    return <Redirect to="/login" />;
+  }
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" component={Houses} />
+      </Switch>
+    </div>
+  );
+};
 
-    </Switch>
-  </div>
-);
-
-export default Home;
+const mapStateToProps = (state) => ({
+  logged_in: state.login.isLogged,
+});
+export default connect(mapStateToProps)(Home);

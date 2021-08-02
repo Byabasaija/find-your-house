@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -7,7 +8,7 @@ import { registerUserAction } from '../api/api';
 // import Login from './Login';
 import './Login.css';
 
-const Signup = ({ signUpUser }) => {
+const Signup = ({ signUpUser, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [password_confirmation, setPassword_confirmation] = useState('');
@@ -27,6 +28,7 @@ const Signup = ({ signUpUser }) => {
   const handleSubmit = (e) => {
     const user = { username, password, password_confirmation };
     signUpUser(user);
+    history.push('/');
     e.preventDefault();
   };
 
@@ -79,7 +81,7 @@ const Signup = ({ signUpUser }) => {
           </form>
           <div>
             <p className="text-center w-full">Already have an account? </p>
-            <Link to="/" className="text-center w-full">
+            <Link to="/login" className="text-center w-full">
               {' '}
               <p>Login</p>
             </Link>

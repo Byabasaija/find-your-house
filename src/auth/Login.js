@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { loginUserAction } from '../api/api';
 import './Login.css';
 
-const Login = ({ loginUser }) => {
+const Login = ({ loginUser, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,6 +21,7 @@ const Login = ({ loginUser }) => {
   const handleSubmit = (e) => {
     const user = { username, password };
     loginUser(user);
+    history.push('/');
     e.preventDefault();
   };
 
