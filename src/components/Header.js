@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 // // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // import { login } from '../actions/index';
-import logoutUserAction from '../actions/logoutUser';
+import { logoutUserAction } from '../api/api';
 
 const Header = ({ history }) => {
   const dispatch = useDispatch();

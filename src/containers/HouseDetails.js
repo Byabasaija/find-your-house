@@ -3,7 +3,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { fetchHouse } from '../actions/index';
+import { fetchHouse } from '../api/api';
 import { AddFavoriteAction } from '../actions/Favorites';
 import '../index.css';
 

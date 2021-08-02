@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
 
   FETCH_HOUSES_REQUEST,
@@ -7,6 +6,14 @@ import {
   FETCH_HOUSE_REQUEST,
   FETCH_HOUSE_SUCCESS,
   FETCH_HOUSE_FAILURE,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_FAILURE,
+  LOGOUT_USER_SUCCESS,
+  LOGOUT_USER_FAILURE,
+  //   REGISTER_USER_REQUEST,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
+
 } from './actionTypes';
 
 const fetchHousesRequest = () => ({
@@ -23,21 +30,6 @@ const fetchHousesFailure = (error) => ({
   payload: error,
 });
 
-const fetchHouses = () => async (dispatch) => {
-  dispatch(fetchHousesRequest);
-
-  try {
-    const response = await axios.get(
-      'https://houses-api1.herokuapp.com/houses',
-    );
-    const houses = response.data;
-    dispatch(fetchHousesSuccess(houses));
-  } catch (error) {
-    const errorMessage = error.message;
-    dispatch(fetchHousesFailure(errorMessage));
-  }
-};
-
 const fetchHouseRequest = () => ({
   type: FETCH_HOUSE_REQUEST,
 });
@@ -52,21 +44,42 @@ const fetchHouseFailure = (error) => ({
   payload: error,
 });
 
-const fetchHouse = (id) => async (dispatch) => {
-  dispatch(fetchHouseRequest());
+const loginUserSuccess = (user) => ({
+  type: LOGIN_USER_SUCCESS,
+  payload: user,
+});
 
-  try {
-    const response = await axios.get(
-      `https://houses-api1.herokuapp.com/houses/${id}`,
-    );
-    const house = response.data;
-    dispatch(fetchHouseSuccess(house));
-  } catch (error) {
-    const errorMessage = error.message;
-    dispatch(fetchHouseFailure(errorMessage));
-  }
-};
+const loginUserFailure = (error) => ({
+  type: LOGIN_USER_FAILURE,
+  payload: error,
+});
+
+const logoutUserSuccess = (user) => ({
+  type: LOGOUT_USER_SUCCESS,
+  payload: user,
+});
+
+const logoutUserFailure = (error) => ({
+  type: LOGOUT_USER_FAILURE,
+  payload: error,
+});
+
+// const registerUserRequest = () => ({
+//   type: REGISTER_USER_REQUEST,
+// });
+
+const registerUserSuccess = (user) => ({
+  type: REGISTER_USER_SUCCESS,
+  payload: user,
+});
+
+const registerUserFailure = (error) => ({
+  type: REGISTER_USER_FAILURE,
+  payload: error,
+});
 
 export {
-  fetchHousesRequest, fetchHousesSuccess, fetchHousesFailure, fetchHouses, fetchHouse,
+  fetchHousesRequest, fetchHousesSuccess, fetchHousesFailure, fetchHouseRequest,
+  fetchHouseSuccess, fetchHouseFailure, registerUserFailure,
+  registerUserSuccess, loginUserSuccess, loginUserFailure, logoutUserSuccess, logoutUserFailure,
 };

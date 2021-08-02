@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import loginUserAction from '../actions/loginUser';
+import { loginUserAction } from '../api/api';
 import './Login.css';
 
 const Login = ({ loginUser }) => {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchHouses } from '../actions/index';
+import { fetchHouses } from '../api/api';
 import House from '../components/House';
 
 const Houses = (props) => {
