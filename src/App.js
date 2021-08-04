@@ -1,16 +1,11 @@
-/* eslint-disable consistent-return */
 /* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { connect, useSelector } from 'react-redux';
 import React from 'react';
 import { toastr } from 'react-redux-toastr';
-
 import Home from './containers/Home';
-// import Signup from './auth/Signup';
-// import Login from './auth/Login';
 import Auth from './auth/Auth';
-// import Auth from './auth/Auth';
 
 function App({ isLogged }) {
   const message = useSelector((state) => state.login.user.message);
@@ -54,7 +49,9 @@ function App({ isLogged }) {
     </div>
   );
 }
-
+App.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 const mapStateToProps = (state) => ({
   isLogged: state.login.user.isLogged,
 });

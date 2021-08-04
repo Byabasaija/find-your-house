@@ -10,7 +10,6 @@ import {
   LOGIN_USER_FAILURE,
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAILURE,
-  //   REGISTER_USER_REQUEST,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILURE,
   ADD_FAVORITE_SUCCESS,
@@ -68,10 +67,6 @@ const logoutUserFailure = (error) => ({
   type: LOGOUT_USER_FAILURE,
   payload: error,
 });
-
-// const registerUserRequest = () => ({
-//   type: REGISTER_USER_REQUEST,
-// });
 
 const registerUserSuccess = (user) => ({
   type: REGISTER_USER_SUCCESS,

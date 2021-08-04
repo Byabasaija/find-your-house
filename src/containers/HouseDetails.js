@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable camelcase */
 
 import { useSelector, useDispatch } from 'react-redux';

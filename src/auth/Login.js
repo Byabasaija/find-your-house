@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-// import { toastr } from 'react-redux-toastr';
 import { loginUserAction } from '../api/api';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 import './Login.css';
