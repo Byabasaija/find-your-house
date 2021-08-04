@@ -5,26 +5,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { registerUserAction } from '../api/api';
-// import Login from './Login';
 import './Login.css';
 
 const Signup = ({ signUpUser, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [password_confirmation, setPassword_confirmation] = useState('');
-
-  const handleChangeUsername = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleChangePasswordCof = (e) => {
-    setPassword_confirmation(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     const user = { username, password, password_confirmation };
     signUpUser(user);
@@ -45,7 +31,7 @@ const Signup = ({ signUpUser, history }) => {
                 name="username"
                 placeholder="username"
                 value={username}
-                onChange={(e) => handleChangeUsername(e)}
+                onChange={(e) => setUsername(e.target.value)}
                 required
                 className="form-control p-2 input100"
               />
@@ -57,7 +43,7 @@ const Signup = ({ signUpUser, history }) => {
                 name="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => handleChangePassword(e)}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className="form-control p-2 input100"
               />
@@ -69,7 +55,7 @@ const Signup = ({ signUpUser, history }) => {
                 name="password_confirmation"
                 placeholder="Password confirmation"
                 value={password_confirmation}
-                onChange={(e) => handleChangePasswordCof(e)}
+                onChange={(e) => setPassword_confirmation(e.target.value)}
                 required
                 className="form-control p-2 input100"
               />
@@ -81,7 +67,7 @@ const Signup = ({ signUpUser, history }) => {
           </form>
           <div>
             <p className="text-center w-full">Already have an account? </p>
-            <Link to="/login" className="text-center w-full">
+            <Link to="/" className="text-center w-full">
               {' '}
               <p>Login</p>
             </Link>

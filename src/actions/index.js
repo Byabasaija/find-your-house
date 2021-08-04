@@ -13,6 +13,11 @@ import {
   //   REGISTER_USER_REQUEST,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILURE,
+  ADD_FAVORITE_SUCCESS,
+  ADD_FAVORITE_FAILURE,
+  FETCH_FAVORITE_REQUEST,
+  FETCH_FAVORITE_SUCCESS,
+  FETCH_FAVORITE_FAILURE,
 
 } from './actionTypes';
 
@@ -78,8 +83,35 @@ const registerUserFailure = (error) => ({
   payload: error,
 });
 
+const AddFavoriteSuccess = (favorites) => ({
+  type: ADD_FAVORITE_SUCCESS,
+  payload: favorites,
+});
+
+const AddFavoriteFailure = (error) => ({
+  type: ADD_FAVORITE_FAILURE,
+  payload: error,
+});
+
+const fetchFavoriteRequest = () => ({
+  type: FETCH_FAVORITE_REQUEST,
+
+});
+
+const fetchFavoriteSuccess = (favorites) => ({
+  type: FETCH_FAVORITE_SUCCESS,
+  payload: favorites,
+});
+
+const fetchFavoriteFailure = (error) => ({
+  type: FETCH_FAVORITE_FAILURE,
+  payload: error,
+});
+
 export {
   fetchHousesRequest, fetchHousesSuccess, fetchHousesFailure, fetchHouseRequest,
   fetchHouseSuccess, fetchHouseFailure, registerUserFailure,
   registerUserSuccess, loginUserSuccess, loginUserFailure, logoutUserSuccess, logoutUserFailure,
+  AddFavoriteFailure, AddFavoriteSuccess, fetchFavoriteRequest, fetchFavoriteSuccess,
+  fetchFavoriteFailure,
 };

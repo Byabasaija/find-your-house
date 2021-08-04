@@ -2,12 +2,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useEffect } from 'react';
-import { fetchFavoriteAction } from '../actions/Favorites';
+import { fetchFavoriteAction } from '../api/api';
 import House from '../components/House';
 
 const UserFavorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
-  const id = useSelector((state) => state.login.user.user.id);
+  const id = useSelector((state) => state.login.user.id);
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);

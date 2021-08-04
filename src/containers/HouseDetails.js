@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable camelcase */
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { fetchHouse } from '../api/api';
-import { AddFavoriteAction } from '../actions/Favorites';
+import { useEffect, useRef } from 'react';
+import { toastr } from 'react-redux-toastr';
+import { fetchHouse, AddFavoriteAction } from '../api/api';
 import '../index.css';
 
 const HouseDetails = () => {
@@ -19,12 +20,19 @@ const HouseDetails = () => {
     }
   }, [id]);
 
-  const user_id = useSelector((state) => state.login.user.user.id);
   const house_id = useSelector((state) => state.house.house.id);
+  const btnRef = useRef();
+  const addFAvorites = () => {
+    dispatch(AddFavoriteAction(house_id));
+  };
 
-  const addFAvorites = (e) => {
+  const handleClickBtn = (e) => {
     e.preventDefault();
-    dispatch(AddFavoriteAction(user_id, house_id));
+    if (btnRef.current) {
+      addFAvorites();
+      btnRef.current.setAttribute('disabled', 'disabled');
+      toastr.success('Success', 'Added');
+    }
   };
 
   return (
@@ -50,7 +58,16 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-                  <div role="button" tabIndex={0} onClick={(e) => addFAvorites(e)} onKeyUp={(e) => addFAvorites(e)} className="btn-orange">Add to favorites</div>
+
+                  <button
+                    type="button"
+                    ref={btnRef}
+                    onClick={(e) => handleClickBtn(e)}
+                    className="btn-orange"
+                  >
+                    Add to favorites
+                  </button>
+
                 </div>
               </div>
             </div>

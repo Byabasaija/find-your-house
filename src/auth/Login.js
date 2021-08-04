@@ -3,20 +3,14 @@ import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+// import { toastr } from 'react-redux-toastr';
 import { loginUserAction } from '../api/api';
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 import './Login.css';
 
 const Login = ({ loginUser, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleChangeUsername = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     const user = { username, password };
@@ -40,7 +34,7 @@ const Login = ({ loginUser, history }) => {
                   placeholder="Name..."
                   name="username"
                   required
-                  onChange={(e) => handleChangeUsername(e)}
+                  onChange={(e) => setUsername(e.target.value)}
                   value={username}
                   className="form-control p-2 input100"
                 />
@@ -48,15 +42,23 @@ const Login = ({ loginUser, history }) => {
               <div className="form-group pb-3 wrap-input100 validate-input m-b-10">
                 <input
                   placeholder="Password..."
+                  type="password"
                   name="password"
                   required
-                  onChange={(e) => handleChangePassword(e)}
+                  onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   className="form-control p-2 input100"
                 />
               </div>
               <div className="container-login100-form-btn p-t-10">
-                <button type="submit" onSubmit={(e) => handleSubmit(e)} className="login100-form-btn">Log in</button>
+                <button
+                  type="submit"
+                  onSubmit={(e) => handleSubmit(e)}
+                  className="login100-form-btn"
+
+                >
+                  Log in
+                </button>
               </div>
             </form>
 
