@@ -1,83 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="limiter"
->
+<div>
   <div
-    className="container-login100 login-pg"
+    className="limiter"
   >
     <div
-      className="wrap-login100 p-t-190 p-b-30"
+      className="container-login100 login-pg"
     >
       <div
-        className="p-5"
+        className="wrap-login100 p-t-190 p-b-30"
       >
-        <h2
-          className="login-text login100-form-title p-t-20 p-b-45 pb-3"
-        >
-          Login
-        </h2>
-        <p
-          className="login-text login100-form-text"
-        >
-          Hey there! Welcome to back
-        </p>
-      </div>
-      <div>
-        <form
-          className="login100-form validate-form"
-          onSubmit={[Function]}
-        >
-          <div
-            className="form-group pb-3 wrap-input100 validate-input m-b-10"
-          >
-            <input
-              className="form-control p-2 input100"
-              name="username"
-              onChange={[Function]}
-              placeholder="Name..."
-              required={true}
-              value=""
-            />
-          </div>
-          <div
-            className="form-group pb-3 wrap-input100 validate-input m-b-10"
-          >
-            <input
-              className="form-control p-2 input100"
-              name="password"
-              onChange={[Function]}
-              placeholder="Password..."
-              required={true}
-              value=""
-            />
-          </div>
-          <div
-            className="container-login100-form-btn p-t-10"
-          >
-            <button
-              className="login100-form-btn"
-              onSubmit={[Function]}
-              type="submit"
-            >
-              Log in
-            </button>
-          </div>
-        </form>
         <div
-          className="text-center w-full"
+          className="p-5"
         >
-          <a
-            className="text-dark"
-            href="/signup"
-            onClick={[Function]}
+          <h2
+            className="login-text login100-form-title p-t-20 p-b-45 pb-3"
           >
-            Create new account
-            <i
-              className="fa fa-long-arrow-right"
-            />
-          </a>
+            Login
+          </h2>
+          <p
+            className="login-text login100-form-text"
+          >
+            Hey there! Welcome to back
+          </p>
+        </div>
+        <div>
+          <form
+            className="login100-form validate-form"
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group pb-3 wrap-input100 validate-input m-b-10"
+            >
+              <input
+                className="form-control p-2 input100"
+                name="username"
+                onChange={[Function]}
+                placeholder="Name..."
+                required={true}
+                value=""
+              />
+            </div>
+            <div
+              className="form-group pb-3 wrap-input100 validate-input m-b-10"
+            >
+              <input
+                className="form-control p-2 input100"
+                name="password"
+                onChange={[Function]}
+                placeholder="Password..."
+                required={true}
+                type="password"
+                value=""
+              />
+            </div>
+            <div
+              className="container-login100-form-btn p-t-10"
+            >
+              <button
+                className="login100-form-btn"
+                onSubmit={[Function]}
+                type="submit"
+              >
+                Log in
+              </button>
+            </div>
+          </form>
+          <div
+            className="text-center w-full"
+          >
+            <a
+              className="text-dark"
+              href="/signup"
+              onClick={[Function]}
+            >
+              Create new account
+              <i
+                className="fa fa-long-arrow-right"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

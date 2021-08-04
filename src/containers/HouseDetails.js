@@ -63,7 +63,7 @@ const HouseDetails = () => {
                     type="button"
                     ref={btnRef}
                     onClick={(e) => handleClickBtn(e)}
-                    className="btn-orange"
+                    className="fav btn-orange"
                   >
                     Add to favorites
                   </button>

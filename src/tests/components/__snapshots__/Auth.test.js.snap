@@ -50,6 +50,7 @@ exports[`renders correctly 1`] = `
               onChange={[Function]}
               placeholder="Password..."
               required={true}
+              type="password"
               value=""
             />
           </div>
