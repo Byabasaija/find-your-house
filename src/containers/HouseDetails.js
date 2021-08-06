@@ -34,6 +34,24 @@ const HouseDetails = () => {
     }
   };
 
+  const status = useSelector((state) => state.addFav.status);
+
+  const renderBtn = () => {
+    if (status === '') {
+      return (
+        <button
+          type="button"
+          ref={btnRef}
+          onClick={(e) => handleClickBtn(e)}
+          className="fav btn-orange"
+        >
+          Add to favorites
+        </button>
+      );
+    }
+    return status;
+  };
+
   return (
     <div className="ui grid container">
       {Object.keys(house).length === 0 ? (
@@ -57,16 +75,7 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-
-                  <button
-                    type="button"
-                    ref={btnRef}
-                    onClick={(e) => handleClickBtn(e)}
-                    className="fav btn-orange"
-                  >
-                    Add to favorites
-                  </button>
-
+                  { renderBtn()}
                 </div>
               </div>
             </div>
