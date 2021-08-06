@@ -1,22 +1,22 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+// import React from 'react';
+// import { Switch, Route } from 'react-router-dom';
 
-import Header from '../components/Header';
-import UserFavorites from './UserFavorites';
-import HouseDetails from './HouseDetails';
-import Houses from './Houses';
+// import Header from '../components/Header';
+// import UserFavorites from './UserFavorites';
+// import HouseDetails from './HouseDetails';
+// import Houses from './Houses';
 
-const Home = () => (
+// const Home = () => (
 
-  <div>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={Houses} />
-      <Route exact path="/house/:id" component={HouseDetails} />
-      <Route exact path="/my-favorites" component={UserFavorites} />
+//   <div>
+//     <Header />
+//     <Switch>
+//       <Route exact path="/" component={Houses} />
+//       <Route exact path="/house/:id" component={HouseDetails} />
+//       <Route exact path="/my-favorites" component={UserFavorites} />
 
-    </Switch>
-  </div>
-);
+//     </Switch>
+//   </div>
+// );
 
-export default Home;
+// export default Home;

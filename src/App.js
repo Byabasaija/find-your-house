@@ -1,29 +1,27 @@
-/* eslint-disable camelcase */
-import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import React from 'react';
-import { toastr } from 'react-redux-toastr';
-import Home from './containers/Home';
-import Auth from './auth/Auth';
+import Login from './auth/Login';
+import Signup from './auth/Signup';
+import Houses from './containers/Houses';
+import HouseDetails from './containers/HouseDetails';
+import UserFavorites from './containers/UserFavorites';
+import Header from './components/Header';
 
-function App({ isLogged }) {
-  const message = useSelector((state) => state.login.user.message);
+function App() {
   const token = localStorage.getItem('token');
   const authenticatedUser = () => (
     <Switch>
-      <Route path="/" render={() => <Home />} />
+      <Route exact path="/" component={Houses} />
+      <Route exact path="/house/:id" component={HouseDetails} />
+      <Route exact path="/my-favorites" component={UserFavorites} />
+      <Route path="/signup" component={Signup} />
     </Switch>
   );
 
   const notAuthenticated = () => (
     <Switch>
-      { isLogged ? (
-        <Route path="/" render={() => <Home />} />
-      ) : (
-        <Route exact path="/" render={() => <Auth />} />
-
-      )}
+      <Route exact path="/" component={Login} />
+      <Route path="/signup" component={Signup} />
     </Switch>
   );
 
@@ -34,25 +32,12 @@ function App({ isLogged }) {
     return notAuthenticated();
   };
 
-  const renderMessage = () => {
-    if (message === undefined) {
-      toastr.error('Error', 'Invalid credetials');
-    } else {
-      toastr.success('Success', `${message}`);
-    }
-  };
-
   return (
     <div>
+      <Header />
       { renderRoutes() }
-      { renderMessage()}
     </div>
   );
 }
-App.propTypes = {
-  isLogged: PropTypes.bool.isRequired,
-};
-const mapStateToProps = (state) => ({
-  isLogged: state.login.user.isLogged,
-});
-export default connect(mapStateToProps)(App);
+
+export default withRouter(App);

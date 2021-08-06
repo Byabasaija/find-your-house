@@ -10,7 +10,7 @@ import {
 } from '../actions/index';
 import setAuthToken from '../utils/authToken';
 
-const apiUrl = 'https://houses-api1.herokuapp.com';
+const apiUrl = 'http://localhost:3001';
 
 const registerUserAction = (user) => async (dispatch) => {
   axios
@@ -29,7 +29,7 @@ const registerUserAction = (user) => async (dispatch) => {
     })
     .catch((error) => {
       const errMsg = error.message;
-      dispatch(registerUserFailure(errMsg));
+      dispatch(registerUserFailure({ errMsg, message: 'Inavalid credentials' }));
     });
 };
 
@@ -50,7 +50,7 @@ const loginUserAction = (user) => async (dispatch) => {
     })
     .catch((error) => {
       const errMsg = error.message;
-      dispatch(loginUserFailure(errMsg));
+      dispatch(loginUserFailure({ errMsg, message: 'Inavalid credentials' }));
     });
 };
 
