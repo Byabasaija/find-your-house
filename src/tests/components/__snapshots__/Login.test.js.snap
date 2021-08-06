@@ -23,6 +23,9 @@ exports[`renders correctly 1`] = `
         >
           Hey there! Welcome to back
         </p>
+        <span
+          className="dlogin-text login100-form-text text-danger pt-2"
+        />
       </div>
       <div>
         <form

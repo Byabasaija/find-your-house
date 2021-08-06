@@ -10,6 +10,24 @@ exports[`renders correctly 1`] = `
     <div
       className="wrap-login100 p-t-190 p-b-30"
     >
+       
+      <div
+        className="p-5"
+      >
+        <h2
+          className="login-text login100-form-title p-t-20 p-b-45 pb-3"
+        >
+          Register
+        </h2>
+        <p
+          className="login-text login100-form-text"
+        >
+          Please register here
+        </p>
+        <span
+          className="dlogin-text login100-form-text text-danger pt-2"
+        />
+      </div>
       <form
         className="login100-form validate-form"
         onSubmit={[Function]}
