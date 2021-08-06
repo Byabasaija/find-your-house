@@ -10,7 +10,7 @@ import {
 } from '../actions/index';
 import setAuthToken from '../utils/authToken';
 
-const apiUrl = 'https://house-api1.herokuap.com';
+const apiUrl = 'https://houses-api1.herokuap.com';
 
 const registerUserAction = (user) => async (dispatch) => {
   axios
