@@ -36,6 +36,7 @@ const HouseDetails = () => {
 
   const favorited = useSelector((state) => state.house.house.id);
   const favHouse = useSelector((state) => state.addFav.fav.favorites);
+  console.log(favHouse);
   const renderBtn = () => {
     if (favHouse === undefined) {
       return (
@@ -48,20 +49,20 @@ const HouseDetails = () => {
           Add to favorites
         </button>
       );
-    } if (favHouse !== undefined && favHouse === favorited) {
-      return (
-        <button
-          type="button"
-          ref={btnRef}
-          onClick={(e) => handleClickBtn(e)}
-          className="fav btn-orange"
-        >
-          Add to favorites
-        </button>
-      );
+    } if (favHouse !== undefined && favHouse.house_id === favorited) {
+      return <p>Added to favorites</p>;
     }
 
-    return <p>Added to favorites</p>;
+    return (
+      <button
+        type="button"
+        ref={btnRef}
+        onClick={(e) => handleClickBtn(e)}
+        className="fav btn-orange"
+      >
+        Add to favorites
+      </button>
+    );
   };
 
   return (
