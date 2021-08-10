@@ -36,7 +36,6 @@ const HouseDetails = () => {
 
   const favorited = useSelector((state) => state.house.house.id);
   const favHouse = useSelector((state) => state.addFav.fav.favorites);
-  console.log(favHouse);
   const renderBtn = () => {
     if (favHouse === undefined) {
       return (
