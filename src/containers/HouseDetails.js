@@ -35,9 +35,9 @@ const HouseDetails = () => {
     }
   };
 
-  // const status = useSelector((state) => state.addFav.status);
+  const favorited = useSelector((state) => state.house.house.id);
   const favHouse = useSelector((state) => state.addFav.fav.favorites.house_id);
-  // const favorited = id;
+
   const renderBtn = () => (
     <button
       type="button"
@@ -73,10 +73,11 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-                  { id !== favHouse ? (
-                    renderBtn()
-                  ) : (
+                  { favorited === favHouse && favHouse ? (
                     <p>Already added to favorites</p>
+
+                  ) : (
+                    renderBtn()
                   )}
                 </div>
               </div>
