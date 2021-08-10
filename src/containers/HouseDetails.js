@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable camelcase */
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -34,23 +35,20 @@ const HouseDetails = () => {
     }
   };
 
-  const status = useSelector((state) => state.addFav.status);
+  // const status = useSelector((state) => state.addFav.status);
+  const favHouse = useSelector((state) => state.addFav.fav.favorites.house_id);
+  // const favorited = id;
+  const renderBtn = () => (
+    <button
+      type="button"
+      ref={btnRef}
+      onClick={(e) => handleClickBtn(e)}
+      className="fav btn-orange"
+    >
+      Add to favorites
+    </button>
 
-  const renderBtn = () => {
-    if (status === '') {
-      return (
-        <button
-          type="button"
-          ref={btnRef}
-          onClick={(e) => handleClickBtn(e)}
-          className="fav btn-orange"
-        >
-          Add to favorites
-        </button>
-      );
-    }
-    return status;
-  };
+  );
 
   return (
     <div className="ui grid container">
@@ -75,7 +73,11 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-                  { renderBtn()}
+                  { id !== favHouse ? (
+                    renderBtn()
+                  ) : (
+                    <p>Already added to favorites</p>
+                  )}
                 </div>
               </div>
             </div>

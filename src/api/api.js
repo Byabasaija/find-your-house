@@ -10,7 +10,7 @@ import {
 } from '../actions/index';
 import setAuthToken from '../utils/authToken';
 
-const apiUrl = 'https://houses-api1.herokuapp.com';
+const apiUrl = 'http://localhost:3001';
 
 const registerUserAction = (user) => async (dispatch) => {
   axios
@@ -56,6 +56,7 @@ const loginUserAction = (user) => async (dispatch) => {
 
 const logoutUserAction = () => (dispatch) => {
   localStorage.removeItem('token');
+  localStorage.removeItem('persist:primary');
   dispatch(logoutUserSuccess({ message: 'You logged out successfully', isLogged: false }));
 };
 const fetchHouses = () => async (dispatch) => {
