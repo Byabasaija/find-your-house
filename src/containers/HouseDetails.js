@@ -36,19 +36,35 @@ const HouseDetails = () => {
   };
 
   const favorited = useSelector((state) => state.house.house.id);
-  const favHouse = useSelector((state) => state.addFav.fav.favorites.house_id);
+  const favHouse = useSelector((state) => state.addFav.fav.favorites);
+  const renderBtn = () => {
+    console.log(favHouse);
+    if (favHouse === undefined) {
+      return (
+        <button
+          type="button"
+          ref={btnRef}
+          onClick={(e) => handleClickBtn(e)}
+          className="fav btn-orange"
+        >
+          Add to favorites
+        </button>
+      );
+    } if (favHouse !== undefined && favHouse === favorited) {
+      return (
+        <button
+          type="button"
+          ref={btnRef}
+          onClick={(e) => handleClickBtn(e)}
+          className="fav btn-orange"
+        >
+          Add to favorites
+        </button>
+      );
+    }
 
-  const renderBtn = () => (
-    <button
-      type="button"
-      ref={btnRef}
-      onClick={(e) => handleClickBtn(e)}
-      className="fav btn-orange"
-    >
-      Add to favorites
-    </button>
-
-  );
+    return <p>Added to favorites</p>;
+  };
 
   return (
     <div className="ui grid container">
@@ -73,12 +89,10 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-                  { favorited === favHouse && favHouse !== undefined ? (
-                    <p>Added to favorites</p>
+                  {
 
-                  ) : (
                     renderBtn()
-                  )}
+                  }
                 </div>
               </div>
             </div>
