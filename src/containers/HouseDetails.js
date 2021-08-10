@@ -73,7 +73,7 @@ const HouseDetails = () => {
                   <div className="text-center">
                     <i className="fas fa-angle-down" />
                   </div>
-                  { favorited === favHouse && favHouse ? (
+                  { favorited === favHouse && favHouse !== undefined ? (
                     <p>Added to favorites</p>
 
                   ) : (
