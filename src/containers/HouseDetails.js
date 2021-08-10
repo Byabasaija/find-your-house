@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 /* eslint-disable camelcase */
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -38,7 +37,6 @@ const HouseDetails = () => {
   const favorited = useSelector((state) => state.house.house.id);
   const favHouse = useSelector((state) => state.addFav.fav.favorites);
   const renderBtn = () => {
-    console.log(favHouse);
     if (favHouse === undefined) {
       return (
         <button
