@@ -74,7 +74,7 @@ const HouseDetails = () => {
                     <i className="fas fa-angle-down" />
                   </div>
                   { favorited === favHouse && favHouse ? (
-                    <p>Already added to favorites</p>
+                    <p>Added to favorites</p>
 
                   ) : (
                     renderBtn()
