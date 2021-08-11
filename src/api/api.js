@@ -10,9 +10,9 @@ import {
 } from '../actions/index';
 import setAuthToken from '../utils/authToken';
 
-// const apiUrl = 'https://houses-api1.herokuapp.com';
+const apiUrl = 'https://houses-api1.herokuapp.com';
 
-const apiUrl = 'http://localhost:3001';
+// const apiUrl = 'http://localhost:3001';
 
 const registerUserAction = (user) => async (dispatch) => {
   axios

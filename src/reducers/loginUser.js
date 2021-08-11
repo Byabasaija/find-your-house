@@ -2,7 +2,6 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   LOGOUT_USER_SUCCESS,
-  LOGOUT_USER_FAILURE,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILURE,
 } from '../actions/actionTypes';
@@ -29,15 +28,8 @@ const loginReducer = (state = init, action) => {
       };
     case LOGOUT_USER_SUCCESS:
       return {
-
         user: action.payload,
         error: '',
-      };
-    case LOGOUT_USER_FAILURE:
-      return {
-        ...state,
-        user: {},
-        error: action.payload,
       };
     case REGISTER_USER_SUCCESS:
       return {
