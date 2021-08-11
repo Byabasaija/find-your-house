@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchFavoriteAction } from '../api/api';
 import House from '../components/House';
+import Header from '../components/Header';
 
 const UserFavorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -36,6 +37,7 @@ const UserFavorites = () => {
     }
     return (
       <div className="container">
+        <Header />
         <div>
           { favorites && favorites.favorites && favorites.favorites.map((ahouse) => (
             <House house={ahouse} key={ahouse.id} />))}

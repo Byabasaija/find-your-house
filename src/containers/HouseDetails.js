@@ -3,8 +3,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import { toastr } from 'react-redux-toastr';
 import { fetchHouse, AddFavoriteAction } from '../api/api';
+import Header from '../components/Header';
 import '../index.css';
 
 const HouseDetails = () => {
@@ -30,7 +30,6 @@ const HouseDetails = () => {
     if (btnRef.current) {
       addFAvorites();
       btnRef.current.setAttribute('disabled', 'disabled');
-      toastr.success('Success', 'Added');
     }
   };
 
@@ -66,6 +65,7 @@ const HouseDetails = () => {
 
   return (
     <div className="ui grid container">
+      <Header />
       {Object.keys(house).length === 0 ? (
         <div>...Loading</div>
       ) : (

@@ -6,4 +6,10 @@ const setAuthToken = (token) => {
   }
 };
 
+// const setToken = (value) => {
+//   const token = JSON.stringify(value);
+//   sessionStorage.setItem('token', token);
+//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+// };
+
 export default setAuthToken;

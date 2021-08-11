@@ -16,7 +16,7 @@ const Login = ({ loginUser, history }) => {
     e.preventDefault();
   };
 
-  const isLogged = useSelector((state) => state.login.user.isLogged);
+  const isLogged = useSelector((state) => state.login.isLogged);
   const error = useSelector((state) => state.login.error.message);
   return (
     <div className="limiter">

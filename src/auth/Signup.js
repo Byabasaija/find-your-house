@@ -83,7 +83,7 @@ const Signup = ({ signUpUser }) => {
           )}
           <div>
             <p className="text-center w-full">Already have an account? </p>
-            <Link to="/" className="text-center w-full">
+            <Link to="/login" className="text-center w-full">
               {' '}
               <p>Login</p>
             </Link>

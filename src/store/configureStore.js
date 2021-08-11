@@ -15,7 +15,7 @@ const persistConfig = {
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-setAuthToken(localStorage.token);
+setAuthToken(sessionStorage.token);
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

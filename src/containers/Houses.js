@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchHouses } from '../api/api';
 import House from '../components/House';
+import Header from '../components/Header';
 
 const Houses = (props) => {
   const { houses, fetchHouses } = props;
@@ -29,6 +30,7 @@ const Houses = (props) => {
     }
     return (
       <div className="container">
+        <Header />
 
         <div>
           { houses && houses.houses && houses.houses.map((ahouse) => (

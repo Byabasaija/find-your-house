@@ -2,149 +2,70 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
+  <div>
     <div
       className="container"
     >
-      <span
-        className="navbar-brand text-dark pg-title"
-        href="#"
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-white"
       >
-        Houses
-      </span>
-      <button
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        className="navbar-toggler text-white"
-        data-bs-target="#navbarSupportedContent"
-        data-bs-toggle="collapse"
-        type="button"
-      >
-        <i
-          className="fas fa-bars text-dark"
-        />
-      </button>
-      <div
-        className="collapse navbar-collapse"
-        id="navbarSupportedContent"
-      >
-        <ul
-          className="navbar-nav me-auto mb-2 mb-lg-0"
-        >
-          <li
-            className="nav-item"
-          >
-            <a
-              className="nav-link active"
-              href="/my-favorites"
-              onClick={[Function]}
-            >
-               My Favorites &gt;
-            </a>
-          </li>
-        </ul>
         <div
-          className="pb-2"
-        />
-        <div>
+          className="container"
+        >
+          <span
+            className="navbar-brand text-dark pg-title"
+            href="#"
+          >
+            Houses
+          </span>
           <button
-            className="btn btn-orange"
-            onClick={[Function]}
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler text-white"
+            data-bs-target="#navbarSupportedContent"
+            data-bs-toggle="collapse"
             type="button"
           >
-            Log out
+            <i
+              className="fas fa-bars text-dark"
+            />
           </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div
-    className="limiter"
-  >
-    <div
-      className="container-login100 login-pg"
-    >
-      <div
-        className="wrap-login100 p-t-190 p-b-30"
-      >
-        <div
-          className="p-5"
-        >
-          <h2
-            className="login-text login100-form-title p-t-20 p-b-45 pb-3"
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
           >
-            Login
-          </h2>
-          <p
-            className="login-text login100-form-text"
-          >
-            Hey there! Welcome to back
-          </p>
-          <span
-            className="dlogin-text login100-form-text text-danger pt-2"
-          />
-        </div>
-        <div>
-          <form
-            className="login100-form validate-form"
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group pb-3 wrap-input100 validate-input m-b-10"
+            <ul
+              className="navbar-nav me-auto mb-2 mb-lg-0"
             >
-              <input
-                className="form-control p-2 input100"
-                name="username"
-                onChange={[Function]}
-                placeholder="Name..."
-                required={true}
-                value=""
-              />
-            </div>
-            <div
-              className="form-group pb-3 wrap-input100 validate-input m-b-10"
-            >
-              <input
-                className="form-control p-2 input100"
-                name="password"
-                onChange={[Function]}
-                placeholder="Password..."
-                required={true}
-                type="password"
-                value=""
-              />
-            </div>
-            <div
-              className="container-login100-form-btn p-t-10"
-            >
-              <button
-                className="login100-form-btn"
-                onSubmit={[Function]}
-                type="submit"
+              <li
+                className="nav-item"
               >
-                Log in
+                <a
+                  className="nav-link active"
+                  href="/my-favorites"
+                  onClick={[Function]}
+                >
+                   My Favorites &gt;
+                </a>
+              </li>
+            </ul>
+            <div
+              className="pb-2"
+            />
+            <div>
+              <button
+                className="btn btn-orange"
+                onClick={[Function]}
+                type="button"
+              >
+                Log out
               </button>
             </div>
-          </form>
-          <div
-            className="text-center w-full"
-          >
-            <a
-              className="text-dark"
-              href="/signup"
-              onClick={[Function]}
-            >
-              Create new account
-              <i
-                className="fa fa-long-arrow-right"
-              />
-            </a>
           </div>
         </div>
-      </div>
+      </nav>
+      <div />
     </div>
   </div>
 </div>

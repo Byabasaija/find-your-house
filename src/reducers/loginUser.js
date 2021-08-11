@@ -8,6 +8,7 @@ import {
 } from '../actions/actionTypes';
 
 const init = {
+  isLogged: false,
   user: { },
   error: '',
 };
@@ -17,6 +18,7 @@ const loginReducer = (state = init, action) => {
     case LOGIN_USER_SUCCESS:
       return {
         user: action.payload,
+        isLogged: true,
         error: '',
       };
     case LOGIN_USER_FAILURE:

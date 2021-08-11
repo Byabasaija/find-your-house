@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { reducer as toastrReducer } from 'react-redux-toastr';
 import housesReducer from './houses';
 import loginReducer from './loginUser';
 import houseReducer from './house';
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
   house: houseReducer,
   addFav: addFavReducer,
   favorites: favoritesReducer,
-  toastr: toastrReducer,
 
 });
 
