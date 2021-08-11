@@ -1,6 +1,5 @@
 import login from '../../reducers/loginUser';
 import {
-  LOGOUT_USER_FAILURE,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILURE,
 } from '../../actions/actionTypes';
@@ -13,17 +12,6 @@ describe('login/logout reducer', () => {
       user: { },
       error: '',
     };
-  });
-
-  test('should return the error status with error', () => {
-    const action = {
-      type: LOGOUT_USER_FAILURE,
-      error: 'Error while logging out.',
-    };
-    expect(login(initialState, action)).toEqual({
-      ...initialState,
-      error: action.payload,
-    });
   });
 
   test('should return the error', () => {
