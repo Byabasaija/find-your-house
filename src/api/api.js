@@ -10,9 +10,9 @@ import {
 } from '../actions/index';
 import setAuthToken from '../utils/authToken';
 
-const apiUrl = 'https://houses-api1.herokuapp.com';
+// const apiUrl = 'https://houses-api1.herokuapp.com';
 
-// const apiUrl = 'http://localhost:3001';
+const apiUrl = 'http://localhost:3001';
 
 const registerUserAction = (user) => async (dispatch) => {
   axios
@@ -24,7 +24,8 @@ const registerUserAction = (user) => async (dispatch) => {
     )
     .then((response) => {
       const token = response.data.auth_token;
-      localStorage.setItem('token', token);
+      JSON.stringify(token);
+      sessionStorage.setItem('token', token);
       setAuthToken(token);
       const userdata = response.data.user.id;
       dispatch(registerUserSuccess({ user: userdata, isLogged: true, message: 'You signed up successfully' }));

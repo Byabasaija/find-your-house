@@ -9,7 +9,7 @@ const Header = ({ history }) => {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logoutUserAction());
-    history.push('/login');
+    history.push('/');
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
