@@ -1,4 +1,50 @@
-# Getting Started with Create React App
+# Find your house
+
+A  ![](https://img.shields.io/badge/Microverse-blueviolet)  Final Capstone project where a logged in user can view a list of houses and click on each house to view details about it.
+- On opening the app displays the login page
+- User logs in if already has an account or can register for a new one
+- If log in is successfull, User is presented with a list of houses where they can browse different houses
+- User can view details about the house by clicking on the house.
+- On the House details page, user can add a house to their favorites
+- In the Navbar, User can navigate to "my favorites > " to see a list of their favorite houses.
+ 
+
+
+## Login page
+![Screenshot](src/assets/login.png)
+## List of houses
+![Screenshot](src/assets/house1.png)
+
+## House details
+![Screenshot](src/assets/house2.png)
+## Favorite houses
+![Screenshot](src/assets/fav.png)
+
+## Built With
+
+- JavaScript
+- React
+- Redux
+- houses-api
+- Bootstrap
+- CSS
+## [Live Link](https://find-your-houses.herokuapp.com/)
+
+
+
+# Getting Started 
+To get started clone this repo
+```
+https://github.com/Byabasaija/find-your-house.git
+```
+Go to the project directory
+```
+npm install
+npm start
+```
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -19,7 +65,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +75,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -39,32 +85,28 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Pascal Byabasaija**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Github** [Byabasaija](https://github.com/Byabasaija)
 
-### Code Splitting
+**Linkedin** [Pascal Byabasaija](https://linkedin/in/pascal-byabasaija)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Twitter** [Pascal](https://twitter.com/byabashaijapoet)
 
-### Analyzing the Bundle Size
+## Acknowledgements
+Design idea by [Alexey Savitskiy on Behance](https://www.behance.net/alexey_savitskiy)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT

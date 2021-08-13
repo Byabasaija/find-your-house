@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-white"
+    >
+      <div
+        className="container"
+      >
+        <span
+          className="navbar-brand text-dark pg-title"
+          href="#"
+        >
+          Houses
+        </span>
+        <button
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler text-white"
+          data-bs-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <i
+            className="fas fa-bars text-dark"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul
+            className="navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link active"
+                href="/my-favorites"
+                onClick={[Function]}
+              >
+                 My Favorites &gt;
+              </a>
+            </li>
+          </ul>
+          <div
+            className="pb-2"
+          />
+          <div>
+            <button
+              className="btn btn-orange"
+              onClick={[Function]}
+              type="button"
+            >
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div />
+  </div>
+</div>
+`;

@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import React from 'react';
+import Login from './auth/Login';
+import Signup from './auth/Signup';
+import Houses from './containers/Houses';
+import HouseDetails from './containers/HouseDetails';
+import UserFavorites from './containers/UserFavorites';
+// import Header from './components/Header';
 
 function App() {
+  const token = sessionStorage.getItem('token');
+  const authenticatedUser = () => (
+    <Switch>
+      <Route exact path="/" component={Houses} />
+      <Route exact path="/house/:id" component={HouseDetails} />
+      <Route exact path="/my-favorites" component={UserFavorites} />
+      <Route path="/signup" component={Signup} />
+    </Switch>
+  );
+
+  const notAuthenticated = () => (
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Route path="/signup" component={Signup} />
+    </Switch>
+  );
+
+  const renderRoutes = () => {
+    if (token) {
+      return authenticatedUser();
+    }
+    return notAuthenticated();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      { renderRoutes() }
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
